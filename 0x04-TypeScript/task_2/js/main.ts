@@ -41,7 +41,7 @@ class Teacher implements TeacherInterface {
 
 //Creating a factory function
 function createEmployee(salary: Salary): Director | Teacher {
-  if (typeof salary === "number" && salary < 500) {
+  if (salary < "500" && typeof salary === "number") {
     return new Teacher();
   } else {
     return new Director();
@@ -55,7 +55,7 @@ export function isDirector(employee: Director | Teacher): employee is Director {
 //Testing the createEmployee function
 console.log(createEmployee(200));
 console.log(createEmployee(1000));
-// console.log(createEmployee("$500"));
+console.log(createEmployee("$500"));
 
 //Creating functions specific to employees
 //function executeWork
