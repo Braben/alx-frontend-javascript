@@ -12,6 +12,8 @@ interface TeacherInterface {
   workTeacherTasks(): string;
 }
 
+type Salary = number | string;
+
 class Director implements DirectorInterface {
   workFromHome(): string {
     return "Working from home";
@@ -38,15 +40,13 @@ class Teacher implements TeacherInterface {
 }
 
 //Creating a factory function
-type salary = number;
-function createEmployee(salary: salary): Director | Teacher {
-  if (salary < 500 && salary < 500 && typeof salary === "number") {
+function createEmployee(salary: Salary): Director | Teacher {
+  if (typeof salary === "number" && salary < 500) {
     return new Teacher();
   } else {
     return new Director();
   }
 }
-
 //6. Type predicate function
 export function isDirector(employee: Director | Teacher): employee is Director {
   return (employee as Director).workDirectorTasks !== undefined;
@@ -59,7 +59,7 @@ console.log(createEmployee(1000));
 
 //Creating functions specific to employees
 //function executeWork
-function executeWork(employee: Director | Teacher): string {
+export function executeWork(employee: Director | Teacher): string {
   if (isDirector(employee)) {
     return employee.workDirectorTasks();
   } else {
