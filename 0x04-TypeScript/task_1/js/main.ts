@@ -37,11 +37,15 @@ interface printTeacherFunction {
   (firstName: string, lastName: string): string;
 }
 
-const printTeacher: printTeacherFunction = (firstName, lastName): string => {
+// Function declaration that matches the interface
+function printTeacher(firstName: string, lastName: string): string {
   return `${firstName.charAt(0)}. ${lastName}`;
-};
+}
 
-console.log(printTeacher("Benjamin", "Lamptey"));
+// Assign the function to a variable of type printTeacherFunction (optional)
+const teacherPrinter: printTeacherFunction = printTeacher;
+
+console.log(printTeacher("Benjamin", "Lamptey")); // Output: B. Lamptey
 
 //interface for class
 interface StudentClass {
