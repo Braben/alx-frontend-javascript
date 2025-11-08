@@ -38,18 +38,12 @@ interface printTeacherFunction {
 }
 
 // Function declaration using destructuring
-function printTeacher({
-  firstName,
-  lastName,
-}: {
-  firstName: string;
-  lastName: string;
-}): string {
+function printTeacher(firstName: string, lastName: string): string {
   return `${firstName.charAt(0)}. ${lastName}`;
 }
 
 // Example usage
-console.log(printTeacher({ firstName: "Benjamin", lastName: "Lamptey" }));
+console.log(printTeacher("Benjamin", "Lamptey"));
 
 //interface for class
 interface StudentClass {
