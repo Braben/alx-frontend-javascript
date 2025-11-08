@@ -34,11 +34,6 @@ console.log(director1);
 
 //Define the interface for the function
 
-// Function declaration that matches the interface
-interface printTeacherFunction {
-  (firstName: string, lastName: string): string;
-}
-
 function printTeacher({
   firstName,
   lastName,
@@ -46,7 +41,8 @@ function printTeacher({
   firstName: string;
   lastName: string;
 }): string {
-  return `${firstName.charAt(0)}. ${lastName}`;
+  firstName = firstName.charAt(0);
+  return `${firstName}. ${lastName}`;
 }
 
 console.log(printTeacher({ firstName: "Benjamin", lastName: "Lamptey" })); // Output: B. Lamptey
