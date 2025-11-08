@@ -75,7 +75,7 @@ console.log(executeWork(createEmployee(1000)));
 // and the Subjects interface
 
 type Subjects = "Math" | "History";
-function teachClass(todayClass: Subjects): string {
+function teachClass(todayClass:Subjects): string {
   if (todayClass === "Math") {
     return "Teaching Math";
   } else if (todayClass === "History") {
