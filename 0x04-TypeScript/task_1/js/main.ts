@@ -61,10 +61,9 @@ class StudentClass {
     return "Currently working";
   }
   displayName(): string {
-    return this.firstName;
+    return `${this.firstName} ${this.lastName}`;
   }
 }
-
 // Example usage:
 const student = new StudentClass("Benjamin", "Lamptey");
 console.log(student.displayName());
