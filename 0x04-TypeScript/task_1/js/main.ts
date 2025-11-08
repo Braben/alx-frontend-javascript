@@ -39,8 +39,8 @@ interface printTeacherFunction {
 }
 
 function printTeacher({
-  firstName,
-  lastName,
+  firstName = "Benjamin",
+  lastName = "Lamptey",
 }: {
   firstName: string;
   lastName: string;
@@ -48,7 +48,11 @@ function printTeacher({
   firstName = firstName.charAt(0);
   return `${firstName}. ${lastName}`;
 }
-console.log(printTeacher({ firstName: "Benjamin", lastName: "Lamptey" }));
+
+const firstName = "Benjamin";
+const lastName = "Lamptey";
+
+console.log(printTeacher({ firstName, lastName }));
 
 //interface for class
 interface StudentClass {
