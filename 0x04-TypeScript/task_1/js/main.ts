@@ -32,17 +32,20 @@ const director1: Director = {
 
 console.log(director1);
 
-// Define the interface for the function
-interface printTeacherFunction {
-  (firstName: string, lastName: string): string;
-}
+//Define the interface for the function
 
-// Function declaration using destructuring
+// Function declaration that matches the interface
 function printTeacher(firstName: string, lastName: string): string {
   return `${firstName.charAt(0)}. ${lastName}`;
 }
 
-// Example usage
+interface printTeacherFunction {
+  (firstName: string, lastName: string): string;
+}
+
+// Assign the function to a variable of type printTeacherFunction (optional)
+const teacherPrinter: printTeacherFunction = printTeacher;
+
 console.log(printTeacher("Benjamin", "Lamptey"));
 
 //interface for class
