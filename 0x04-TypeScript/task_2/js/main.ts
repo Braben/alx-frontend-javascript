@@ -38,16 +38,17 @@ class Teacher implements TeacherInterface {
 }
 
 //Creating a factory function
-function createEmployee(salary: number | string): Director | Teacher {
-  if (typeof salary === "number" && salary < 500) {
+type salary = number | string;
+function createEmployee(salary: salary): Director | Teacher {
+  if (salary === "number" || (typeof salary === "number" && salary < 500)) {
     return new Teacher();
   } else {
     return new Director();
   }
 }
 
-//Type predicate function
-function isDirector(employee: Director | Teacher): employee is Director {
+//6. Type predicate function
+export function isDirector(employee: Director | Teacher): employee is Director {
   return (employee as Director).workDirectorTasks !== undefined;
 }
 
