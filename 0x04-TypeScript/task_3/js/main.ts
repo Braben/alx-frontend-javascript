@@ -3,20 +3,19 @@
 import { RowID, RowElement } from "./interface";
 import * as CRUD from "./crud";
 
-const obj: RowElement = { firstName: "Guillaume", lastName: "Salva" };
-console.log("Object to be inserted:", obj);
+const row: RowElement = { firstName: "Guillaume", lastName: "Salva" };
+console.log("Object to be inserted:", row);
 
 // Insert a new row and store the returned RowID
-const newRowID: RowID = CRUD.insertRow(obj);
+const newRowID: RowID = CRUD.insertRow(row);
 console.log(`Inserted row ID: ${newRowID}`);
 
 // Create an updated row with age = 23
 const updatedRow: RowElement = {
-  firstName: "Guillaume",
-  lastName: "Salva",
+  ...row,
   age: 23,
 };
-console.log(`New row inserted with ID: ${newRowID}`);
+console.log(`updated row inserted with ID: ${updatedRow.age}`);
 
 // Update the existing row
 CRUD.updateRow(newRowID, updatedRow);
